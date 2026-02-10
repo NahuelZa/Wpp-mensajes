@@ -2,39 +2,19 @@ package org.example;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-public class App extends Application {
+public class Eventos extends App {
 
-    private static Stage window;
-    private static Scene scene1;
+    Stage window;
+    Scene scene1;
 
-    public static Stage getWindow() {
-        return window;
-    }
-
-    public void setWindow(Stage window) {
-        this.window = window;
-    }
-
-    public static Scene getScene1() {
-        return scene1;
-    }
-
-    public void setScene1(Scene scene1) {
-        this.scene1 = scene1;
-    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/Pantalla_inicial.fxml"));
-
-
 
         scene1=new Scene(root,500,500);
         //Ventana
