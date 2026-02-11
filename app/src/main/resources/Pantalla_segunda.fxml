@@ -30,15 +30,15 @@
       <VBox prefHeight="333.0" prefWidth="164.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="163.0" text="Ingrese opcion" textAlignment="RIGHT" VBox.vgrow="ALWAYS" />
-            <Button id="personas" fx:id="personas" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickPersona" prefHeight="25.0" prefWidth="135.0" text="Personas">
+            <Button id="personas" fx:id="personas" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick_PantallaInicial" prefHeight="25.0" prefWidth="135.0" text="Personas">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="70.0" />
                </VBox.margin></Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Eventos">
+            <Button fx:id="Eventos" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick_PantallaInicial" prefHeight="25.0" prefWidth="135.0" text="Eventos">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin></Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Mensajes">
+            <Button fx:id="Mensajes" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClick_PantallaInicial" prefHeight="25.0" prefWidth="135.0" text="Mensajes">
 
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -68,8 +68,8 @@
         </rowConstraints>
          <children>
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="176.0" text="Ingrese opcion" GridPane.columnIndex="1" />
-            <Button id="personas" fx:id="agregarPersonas_boton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickPersona" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button id="personas" fx:id="personas11" alignment="CENTER" contentDisplay="CENTER" layoutX="156.0" layoutY="98.0" mnemonicParsing="false" onAction="#onClickPersona" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button id="personas" fx:id="agregar_boton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button id="personas" fx:id="listar_boton" alignment="CENTER" contentDisplay="CENTER" layoutX="156.0" layoutY="98.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </center>
