@@ -68,8 +68,8 @@
         </rowConstraints>
          <children>
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="176.0" text="Ingrese opcion" GridPane.columnIndex="1" />
-            <Button id="personas" fx:id="personas1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickPersona" prefHeight="25.0" prefWidth="149.0" text="Agregar Personas" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button id="personas" fx:id="personas11" alignment="CENTER" contentDisplay="CENTER" layoutX="156.0" layoutY="98.0" mnemonicParsing="false" onAction="#onClickPersona" prefHeight="25.0" prefWidth="149.0" text="Listar Personas" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button id="personas" fx:id="agregarPersonas_boton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickPersona" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button id="personas" fx:id="personas11" alignment="CENTER" contentDisplay="CENTER" layoutX="156.0" layoutY="98.0" mnemonicParsing="false" onAction="#onClickPersona" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </center>
