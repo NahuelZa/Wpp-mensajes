@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="253.0" prefHeight="400.0" prefWidth="253.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -27,12 +27,12 @@
       </MenuBar>
    </top>
    <left>
-      <VBox prefHeight="333.0" prefWidth="247.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox layoutX="1.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="612.0" prefWidth="330.0" spacing="10.0" BorderPane.alignment="CENTER_RIGHT">
          <padding>
             <Insets top="5.0" />
          </padding>
          <children>
-            <GridPane hgap="1.0" vgap="1.0">
+            <GridPane alignment="CENTER_LEFT" gridLinesVisible="true" hgap="1.0" vgap="1.0" VBox.vgrow="SOMETIMES">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -54,42 +54,110 @@
                   <RowConstraints maxHeight="60.0" minHeight="3.0" prefHeight="31.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="169.0" text="Agregar Persona" GridPane.columnSpan="2147483647" />
-                  <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="169.0" text="Ingrese Nombre" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
-                  <TextField prefHeight="25.0" prefWidth="152.0" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="53.0" prefHeight="17.0" prefWidth="169.0" text="Apellido" GridPane.rowIndex="3" />
-                  <TextField layoutX="94.0" layoutY="80.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
-                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="115.0" prefHeight="17.0" prefWidth="169.0" text="Telefono (wpp)" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
-                  <TextField layoutX="15.0" layoutY="142.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" />
-                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="177.0" prefHeight="17.0" prefWidth="169.0" text="Alias" GridPane.rowIndex="7" />
-                  <TextField layoutX="15.0" layoutY="204.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="8" />
-                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="90.0" prefHeight="17.0" prefWidth="169.0" text="Quisiera Agregar otro Alias?" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.vgrow="ALWAYS" />
-                  <RadioButton mnemonicParsing="false" text="Si" GridPane.rowIndex="10">
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="246.0" text="Agregar Mensaje" GridPane.columnSpan="2147483647">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin></Label>
+                  <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="169.0" text="Asignar Mensaje a categoria" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="115.0" prefHeight="17.0" prefWidth="169.0" text="Asignar Mensaje a evento" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
+                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="90.0" prefHeight="17.0" prefWidth="169.0" text="Elemento a utilizar" GridPane.columnSpan="2147483647" GridPane.rowIndex="9" />
+                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="234.0" prefHeight="17.0" prefWidth="160.0" text="Escriba mensaje" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+                  <ChoiceBox prefWidth="150.0" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets top="5.0" />
+                     </GridPane.margin></ChoiceBox>
+                  <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Agregar" textAlignment="RIGHT" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </GridPane.margin></Button>
+                  <HBox fx:id="h_box_agregar_mensaje" prefHeight="35.0" prefWidth="237.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" GridPane.rowSpan="2" />
+                  <ChoiceBox layoutX="15.0" layoutY="57.0" prefWidth="150.0" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets top="5.0" />
+                     </GridPane.margin></ChoiceBox>
+                  <Button alignment="CENTER" contentDisplay="RIGHT" layoutX="104.0" layoutY="57.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Agregar" textAlignment="RIGHT" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <HBox layoutX="15.0" layoutY="81.0" prefHeight="35.0" prefWidth="237.0" GridPane.columnSpan="3" GridPane.rowIndex="7" GridPane.rowSpan="2" />
+                  <ChoiceBox layoutX="15.0" layoutY="145.0" prefHeight="0.0" prefWidth="79.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <TextArea prefHeight="37.0" prefWidth="175.0" GridPane.columnSpan="3" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="11" GridPane.rowSpan="3" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS" />
+                  <Button alignment="CENTER" contentDisplay="RIGHT" layoutX="104.0" layoutY="126.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="66.0" scaleX="0.8" scaleY="0.8" text="Elemento" textAlignment="RIGHT" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="10">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" top="7.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="207.0" prefHeight="17.0" prefWidth="232.0" text="Asignar mensaje a persona en especifico?" GridPane.columnSpan="2147483647" GridPane.rowIndex="14" />
+                  <ChoiceBox layoutX="15.0" layoutY="126.0" prefWidth="150.0" GridPane.rowIndex="15" />
+                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="291.0" prefHeight="40.0" prefWidth="232.0" text="Agregar otro mensaje a misma categoria y evento?" GridPane.columnSpan="3" GridPane.rowIndex="16" />
+                  <RadioButton mnemonicParsing="false" text="Si" GridPane.rowIndex="17">
                      <toggleGroup>
-                        <ToggleGroup fx:id="Alias" />
+                        <ToggleGroup fx:id="AgregarMensaje_Otro_mensaje" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton layoutX="15.0" layoutY="260.0" mnemonicParsing="false" text="No" toggleGroup="$Alias" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                  <ComboBox prefWidth="150.0" promptText="Elegir" GridPane.rowIndex="12" />
-                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="234.0" prefHeight="17.0" prefWidth="169.0" text="Categoria" GridPane.rowIndex="11" />
-                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="248.0" prefHeight="17.0" prefWidth="240.0" text="Quisiera agregar un evento a persona?" GridPane.columnSpan="2147483647" GridPane.rowIndex="13" />
-                  <RadioButton layoutX="15.0" layoutY="226.0" mnemonicParsing="false" text="Si" GridPane.rowIndex="14">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="eventoPersona" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton layoutX="94.0" layoutY="226.0" mnemonicParsing="false" text="No" toggleGroup="$eventoPersona" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <RadioButton layoutX="15.0" layoutY="333.0" mnemonicParsing="false" text="No" toggleGroup="$AgregarMensaje_Otro_mensaje" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+                  <Separator prefHeight="3.0" prefWidth="219.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="18" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </GridPane>
          </children>
       </VBox>
    </left>
    <bottom>
-      <HBox prefHeight="24.0" prefWidth="253.0" BorderPane.alignment="CENTER" />
+      <HBox prefHeight="24.0" prefWidth="253.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+              </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Cancelar" textAlignment="RIGHT" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="SOMETIMES" GridPane.valignment="BOTTOM" GridPane.vgrow="SOMETIMES">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets bottom="4.0" left="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="RIGHT" layoutX="99.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Aceptar" textAlignment="RIGHT" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="SOMETIMES" GridPane.valignment="BOTTOM" GridPane.vgrow="SOMETIMES">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets bottom="4.0" left="10.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </children></HBox>
    </bottom>
 </BorderPane>

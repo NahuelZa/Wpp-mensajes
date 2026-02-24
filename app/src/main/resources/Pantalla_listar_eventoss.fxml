@@ -44,11 +44,11 @@
             </padding></HBox>
     </bottom>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <GridPane prefHeight="91.0" prefWidth="479.0">
+                  <GridPane prefHeight="91.0" prefWidth="479.0" HBox.hgrow="ALWAYS">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -65,27 +65,27 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Contactos" GridPane.columnSpan="2">
+                        <Label text="Eventos" GridPane.columnSpan="2">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Agregar Persona" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Agregar Evento" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="2.0" />
                            </GridPane.margin>
                         </Button>
-                        <ComboBox prefWidth="150.0" promptText="Alfabetico" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox prefWidth="150.0" promptText="Alfabetico" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                         <Label layoutX="10.0" layoutY="5.0" text="Filltros" GridPane.rowIndex="2">
                            <font>
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <ComboBox layoutX="127.0" layoutY="60.0" prefWidth="150.0" promptText="Ascendente" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <ComboBox layoutX="127.0" layoutY="60.0" prefWidth="150.0" promptText="Ascendente" scaleX="0.9" scaleY="0.9" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES" />
                         <Button mnemonicParsing="false" text="Borrar" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                         <TextField promptText="Buscar" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="2">
                            <GridPane.margin>
-                              <Insets top="2.0" />
+                              <Insets right="5.0" top="2.0" />
                            </GridPane.margin>
                         </TextField>
                         <Label prefHeight="17.0" prefWidth="130.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
@@ -93,9 +93,9 @@
                   </GridPane>
                </children>
             </HBox>
-            <HBox prefHeight="285.0" prefWidth="502.0">
+            <HBox prefHeight="285.0" prefWidth="502.0" VBox.vgrow="ALWAYS">
                <children>
-                  <TableView prefHeight="218.0" prefWidth="502.0">
+                  <TableView prefHeight="218.0" prefWidth="502.0" HBox.hgrow="ALWAYS">
                     <columns>
                       <TableColumn prefWidth="75.0" text="C1" />
                       <TableColumn prefWidth="75.0" text="C2" />

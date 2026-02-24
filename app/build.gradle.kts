@@ -9,6 +9,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
     id("org.openjfx.javafxplugin") version "0.1.0"
+
 }
 
 repositories {
@@ -19,6 +20,7 @@ repositories {
 dependencies {
     // Use JUnit test framework.
     testImplementation(libs.junit)
+
 
     // This dependency is used by the application.
     implementation(libs.guava)

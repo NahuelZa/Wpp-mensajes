@@ -8,10 +8,19 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.util.Date;
+
 public class Personas   {
 
-    Stage window;
-    Scene scene1;
+    private String nombre;
+    private String apellido;
+    private String alias;
+    private int telefono;
+    private Date fecha_nacimiento;
+    private Categoria categoria;
+    private Eventos evento;
+
+
 
 
     public void diplay() throws Exception {

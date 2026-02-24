@@ -56,13 +56,11 @@
                   <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="169.0" text="Agregar Persona" GridPane.columnSpan="2147483647" />
-                  <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="169.0" text="Ingrese Nombre" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="169.0" text="Agregar evento" GridPane.columnSpan="2147483647" />
+                  <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="17.0" prefHeight="17.0" prefWidth="169.0" text="Nombre/Titulo" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
                   <TextField prefHeight="25.0" prefWidth="152.0" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
-                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="53.0" prefHeight="17.0" prefWidth="169.0" text="Apellido" GridPane.rowIndex="3" />
-                  <TextField layoutX="94.0" layoutY="80.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
-                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="115.0" prefHeight="17.0" prefWidth="169.0" text="Telefono (wpp)" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
-                  <TextField layoutX="15.0" layoutY="142.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" />
+                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="53.0" prefHeight="17.0" prefWidth="169.0" text="Fecha" GridPane.rowIndex="3" />
+                  <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="115.0" prefHeight="17.0" prefWidth="169.0" text="Hora" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
                   <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="177.0" prefHeight="17.0" prefWidth="169.0" text="Alias" GridPane.rowIndex="7" />
                   <TextField layoutX="15.0" layoutY="204.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="8" />
                   <Label alignment="TOP_LEFT" layoutX="15.0" layoutY="90.0" prefHeight="17.0" prefWidth="169.0" text="Quisiera Agregar otro Alias?" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.vgrow="ALWAYS" />
@@ -81,6 +79,8 @@
                      </toggleGroup>
                   </RadioButton>
                   <RadioButton layoutX="94.0" layoutY="226.0" mnemonicParsing="false" text="No" toggleGroup="$eventoPersona" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                  <DatePicker layoutX="15.0" layoutY="145.0" GridPane.rowIndex="4" />
+
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -90,6 +90,13 @@
       </VBox>
    </left>
    <bottom>
-      <HBox prefHeight="24.0" prefWidth="253.0" BorderPane.alignment="CENTER" />
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="24.0" prefWidth="253.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Aceptar" />
+            <Button mnemonicParsing="false" text="Cancelar" />
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding></HBox>
    </bottom>
 </BorderPane>
