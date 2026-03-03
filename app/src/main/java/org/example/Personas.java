@@ -1,27 +1,42 @@
 package org.example;
 
-import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 public class Personas   {
 
     private String nombre;
     private String apellido;
-    private String alias;
+    private List<String> alias;
     private int telefono;
-    private Date fecha_nacimiento;
+    private LocalDate fecha_nacimiento;
     private Categoria categoria;
-    private Eventos evento;
+    private List<Eventos> evento;
 
 
+    public Personas(String nombre, String apellido, List<String> alias, int telefono, LocalDate fecha_nacimiento,Categoria categoria) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.alias = alias;
+        this.telefono = telefono;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.categoria = categoria;
+        this.evento = null;
+    }
 
+    public Personas(String nombre, String apellido, List<String> alias, int telefono, LocalDate fecha_nacimiento, Categoria categoria, List<Eventos> evento) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.alias = alias;
+        this.telefono = telefono;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.categoria = categoria;
+        this.evento = evento;
+    }
 
     public void diplay() throws Exception {
 
@@ -37,6 +52,16 @@ public class Personas   {
 
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Personas{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", alias=" + alias +
+                ", telefono=" + telefono +
+                ", fecha_nacimiento=" + fecha_nacimiento +
+                ", categoria=" + categoria +
+                ", evento=" + evento +
+                '}';
+    }
 }

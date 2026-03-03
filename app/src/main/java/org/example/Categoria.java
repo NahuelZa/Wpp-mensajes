@@ -1,13 +1,9 @@
 package org.example;
 
-public class Categoria {
-    enum categoria{
+public enum Categoria {
         MEJOR_AMIGO,
         TRABAJO,
         AMIGO,
         CONOCIDO,
         FAMILIAR
-
-
-    }
 }

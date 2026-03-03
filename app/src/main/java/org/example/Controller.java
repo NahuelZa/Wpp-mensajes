@@ -38,6 +38,7 @@ public class Controller {
             // Cambio texto de segundo boton segun el texto del boton presionado
             proximoControlador.cambiarTextoBotones_segundaPantalla(btnPresionado.getText());
 
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -47,38 +48,62 @@ public class Controller {
     public void cambiarTextoBotones_segundaPantalla(String nuevoTexto) {
         if (agregar_boton != null) {
             agregar_boton.setText("Agregar " + nuevoTexto);
-            listar_boton.setText("Listar " + nuevoTexto );
+            listar_boton.setText("Listar " + nuevoTexto);
         }
     }
+
+    public static void dimensiones_estandar_pantalla(int width, int height) {
+        App.getWindow().setWidth(width);
+        App.getWindow().setHeight(height);
+    }
+
+    private void cambio_pantalla_fxml(String fxml) throws IOException {
+        try {
+            // Cargo el archivo FXML
+            FXMLLoader loaderAgregar = new FXMLLoader(getClass().getResource(fxml));
+            Parent rootAgregar = loaderAgregar.load();
+            App.getScene1().setRoot(rootAgregar);
+        } catch (IOException e) {
+            e.printStackTrace();
+
+
+        }
+    }
+
+    public static void cancelar_funcion() {
+
+        try {
+            // Cargo el archivo FXML
+            FXMLLoader loader = new FXMLLoader(Controller.class.getResource("/Pantalla_inicial.fxml"));
+            Parent root = loader.load();
+            // Cambio de pantalla al archivo FXML
+            App.getScene1().setRoot(root);
+            Controller.dimensiones_estandar_pantalla(500, 500);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     @FXML
     void onClick_PantallaAgregar() throws IOException {
         try {
             if (agregar_boton.getText().equals("Agregar Personas")) {
+                cambio_pantalla_fxml("/Pantalla_agregar_persona.fxml");
 
-                // Cargo el archivo FXML
-                FXMLLoader loaderAgregar = new FXMLLoader(getClass().getResource("/Pantalla_agregar_persona.fxml"));
-                Parent rootAgregar = loaderAgregar.load();
-                App.getScene1().setRoot(rootAgregar);
                 //Cambia el titulo de la segunda pantalla segun texto de boton presionado
                 App.getWindow().setTitle("Agregar Personas");
-                App.getWindow().setWidth(263);
-                App.getWindow().setHeight(500);
+                dimensiones_estandar_pantalla(263, 500);
             }
             if (agregar_boton.getText().equals("Agregar Eventos")) {
-                FXMLLoader loaderAgregar = new FXMLLoader(getClass().getResource("/Pantalla_agregar_eventos.fxml"));
-                Parent rootAgregar = loaderAgregar.load();
-                App.getScene1().setRoot(rootAgregar);
-                App.getWindow().setWidth(263);
-                App.getWindow().setHeight(410);
+                cambio_pantalla_fxml("/Pantalla_agregar_eventos.fxml");
+                dimensiones_estandar_pantalla(263, 500);
             }
 
             if (agregar_boton.getText().equals("Agregar Mensajes")) {
-                FXMLLoader loaderAgregar = new FXMLLoader(getClass().getResource("/Pantalla_agregar_mensaje.fxml"));
-                Parent rootAgregar = loaderAgregar.load();
-                App.getScene1().setRoot(rootAgregar);
-                App.getWindow().setWidth(410);
-                App.getWindow().setHeight(710);
+                cambio_pantalla_fxml("/Pantalla_agregar_mensaje.fxml");
+                dimensiones_estandar_pantalla(263, 500);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -90,39 +115,22 @@ public class Controller {
     void onClick_PantallaListar() throws IOException {
         try {
             if (listar_boton.getText().equals("Listar Personas")) {
+                modo_lista.display(new modo_lista_personas(), 900, 900);
 
-                // Cargo el archivo FXML
-                FXMLLoader loaderAgregar = new FXMLLoader(getClass().getResource("/Pantalla_listar_personas.fxml"));
-                Parent rootAgregar = loaderAgregar.load();
-                App.getScene1().setRoot(rootAgregar);
-                //Cambia el titulo de la segunda pantalla segun texto de boton presionado
-                App.getWindow().setTitle("Listar Personas");
-                App.getWindow().setWidth(263);
-                App.getWindow().setHeight(500);
             }
             if (listar_boton.getText().equals("Listar Eventos")) {
-                FXMLLoader loaderAgregar = new FXMLLoader(getClass().getResource("/Pantalla_listar_eventoss.fxml"));
-                Parent rootAgregar = loaderAgregar.load();
-                App.getScene1().setRoot(rootAgregar);
-                App.getWindow().setWidth(263);
-                App.getWindow().setHeight(410);
+                modo_lista.display(new modo_lista_eventos(), 900, 900);
+
             }
 
             if (listar_boton.getText().equals("Listar Mensajes")) {
-                FXMLLoader loaderAgregar = new FXMLLoader(getClass().getResource("/Pantalla_listar_mensajes.fxml"));
-                Parent rootAgregar = loaderAgregar.load();
-                App.getScene1().setRoot(rootAgregar);
-                App.getWindow().setWidth(410);
-                App.getWindow().setHeight(710);
+                modo_lista.display(new modo_lista_personas(),900,900);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
-
-
-
 
 
     //Para cambiar estilos etc
