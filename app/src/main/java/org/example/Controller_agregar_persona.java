@@ -1,22 +1,22 @@
 package org.example;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 
-import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.event.ActionEvent;
-import javafx.stage.Stage;
+import org.example.DbConnection.DbConnection;
+import org.example.modelos.personas;
 
 
 public class Controller_agregar_persona {
@@ -31,7 +31,7 @@ public class Controller_agregar_persona {
     @FXML
     private Label error_label, error_nombre, error_apellido, error_categoria, error_fecha;
     @FXML
-    private Button boton_aceptar,boton_cancelar;
+    private Button boton_aceptar, boton_cancelar;
     private boolean valido;
     private int telefono;
     private String nombre;
@@ -39,9 +39,16 @@ public class Controller_agregar_persona {
     private LocalDate fecha;
     private Categoria categoria;
 
+    String query = null;
+    Connection connection = null;
+    ResultSet resultSet = null;
+    PreparedStatement preparedStatement;
+    personas persona = null;
+    private boolean update = false;
+    int personaId;
+
 
     //isInt(label_telefono,label_telefono.getText)
-
 
 
     @FXML
@@ -60,8 +67,6 @@ public class Controller_agregar_persona {
 
             }
         });
-        System.out.println(valido);
-
 
 
 
@@ -124,21 +129,67 @@ public class Controller_agregar_persona {
 
 
             if (valido) {
-                Personas nuevaPersona = new Personas(nombre, apellido, listaAlias, telefono, fecha, categoria);
-                AlertBox.display("Agregado exitoso",  nuevaPersona + " agregado exitosamente");
-
+                personas nuevaPersona = new personas(nombre, apellido, listaAlias, telefono, fecha, categoria);
+                connection = DbConnection.getConnection();
+                getQuery();
+                insert(nuevaPersona);
+                clean();
+                AlertBox.display("Agregado exitoso", nuevaPersona + " agregado exitosamente");
 
             } else {
                 error_label.setText("Completa todos los campos vieja");
             }
 
-
         });
 
+        boton_cancelar.setOnAction(actionEvent -> Controller.cancelar_funcion());
 
 
-       boton_cancelar.setOnAction(actionEvent -> Controller.cancelar_funcion());
+    }
 
+    private void getQuery() {
+
+        if (update == false) {
+
+            query = "INSERT INTO persona (first_name, last_name, phone, birthday, categoriaId) VALUES (?, ?, ?, ?, ?)";
+
+        } else {
+            query = "UPDATE `personas` SET "
+                    + "`first_name`=?,"
+                    + "`last_name`=?,"
+                    + "`phone`=?,"
+                    + "`birthday`=?,"
+                    + "`categoriaId`= ? WHERE id = '" + personaId + "'";
+        }
+
+    }
+
+    @FXML
+    private void clean() {
+        label_nombre.setText("");
+        label_apellido.setText("");
+        label_telefono.setText("");
+        fechaNacimiento_datePicker.setValue(null);
+
+
+    }
+
+    private void insert(personas persona) {
+
+        try {
+            int idCategoria = persona.getCategoria().ordinal() + 1;
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, persona.getNombre());
+            preparedStatement.setString(2, persona.getApellido());
+            preparedStatement.setInt(3, persona.getTelefono());
+            preparedStatement.setDate(4, java.sql.Date.valueOf(persona.getFecha_nacimiento()));
+            preparedStatement.setInt(5, idCategoria);
+            preparedStatement.execute();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Controller_agregar_persona.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 }

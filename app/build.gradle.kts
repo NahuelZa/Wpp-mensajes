@@ -20,6 +20,7 @@ repositories {
 dependencies {
     // Use JUnit test framework.
     testImplementation(libs.junit)
+    implementation("com.mysql:mysql-connector-j:8.0.33")
 
 
     // This dependency is used by the application.

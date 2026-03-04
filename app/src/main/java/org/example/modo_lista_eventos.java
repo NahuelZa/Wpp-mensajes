@@ -3,6 +3,8 @@ package org.example;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.sql.SQLException;
+
 public class modo_lista_eventos  extends modo_lista{
 
     @FXML
@@ -17,12 +19,12 @@ public class modo_lista_eventos  extends modo_lista{
 
     @FXML
     @Override
-    public void initialize() {
+    public void initialize() throws SQLException {
         // Llamamos al initialize del padre si tiene lógica (como llenar el ComboBox)
         super.initialize();
 
         // Ahora sí, cambiamos el texto
 
-        aceptar_boton.setText("Hola perrita");
+        agregar_boton.setText("Agregar Evento");
     }
 }

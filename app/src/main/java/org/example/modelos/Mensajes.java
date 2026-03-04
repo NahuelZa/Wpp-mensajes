@@ -1,10 +1,10 @@
-package org.example;
+package org.example.modelos;
 
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.App;
 
 public class Mensajes extends App {
 

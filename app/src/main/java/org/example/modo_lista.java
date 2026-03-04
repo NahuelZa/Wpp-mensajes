@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import static org.example.Controller.dimensiones_estandar_pantalla;
 
@@ -23,7 +24,7 @@ public class modo_lista {
 
 
         @FXML
-        public void initialize() {
+        public void initialize() throws SQLException {
                 //Agrego valores de ENUM filtro al comboBox
                 filtro_orden.getItems().setAll(Filtros.values());
                 cancelar_boton.setOnAction(actionEvent -> {

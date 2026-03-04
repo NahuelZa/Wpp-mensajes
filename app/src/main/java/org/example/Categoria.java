@@ -5,5 +5,12 @@ public enum Categoria {
         TRABAJO,
         AMIGO,
         CONOCIDO,
-        FAMILIAR
+        FAMILIAR;
+
+
+@Override
+public String toString() {
+        // Esto cambia "MEJOR_AMIGO" por "MEJOR AMIGO"
+        return name().replace('_', ' ');
 }
+        }
